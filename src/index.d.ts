@@ -46,8 +46,10 @@ export interface ApiClient {
   post<T = any>(path: string, body?: any): Promise<T>;
   /** PUT request with a JSON body. */
   put<T = any>(path: string, body: any): Promise<T>;
-  /** DELETE request. */
+  /** DELETE request. Historical name — `delete()` works identically. */
   del<T = any>(path: string): Promise<T>;
+  /** DELETE request. Alias for `del()` — use whichever your codebase prefers. */
+  delete<T = any>(path: string): Promise<T>;
   /** Upload a file via multipart/form-data. */
   upload<T = any>(path: string, data: FormData | Record<string, any>): Promise<T>;
   /** Raw request — returns the Response object instead of parsed JSON. */

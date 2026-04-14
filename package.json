@@ -1,6 +1,6 @@
 {
   "name": "@arraypress/api-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight API client with query building, JSON body serialisation, file uploads, and error handling.",
   "type": "module",
   "main": "src/index.js",

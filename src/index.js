@@ -258,13 +258,23 @@ export function createClient(baseUrl, options = {}) {
     /**
      * DELETE request.
      *
+     * Exposed under two names: `del` (historical, avoids the `delete`
+     * JS keyword) and `delete` (ergonomic, matches REST method name).
+     * Both are identical — pick whichever your codebase prefers.
+     *
      * @param {string} path - Request path.
      * @returns {Promise<*>} Parsed JSON response.
      *
      * @example
      * await client.del('/products/42');
+     * await client.delete('/products/42');   // same thing
      */
     del(path) {
+      return request(path, { method: 'DELETE' });
+    },
+
+    /** Alias for `del()` — exposes the REST method name directly. */
+    delete(path) {
       return request(path, { method: 'DELETE' });
     },
 
